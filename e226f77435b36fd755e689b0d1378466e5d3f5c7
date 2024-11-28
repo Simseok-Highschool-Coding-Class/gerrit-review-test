@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51490837_254473fb",
+        "filename": "sample.ino",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1038483
+      },
+      "writtenOn": "2024-11-28T09:19:45Z",
+      "side": 1,
+      "message": "보통 이런 `#define`이나 `#include`같은 전처리문들은 제일 위로 빼는게 보편적인 코딩 컨벤션 (코딩 규칙)입니다 😊",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "e226f77435b36fd755e689b0d1378466e5d3f5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b80d6511_99c487a4",
+        "filename": "sample.ino",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1038483
+      },
+      "writtenOn": "2024-11-28T09:19:45Z",
+      "side": 1,
+      "message": "보통 이렇게 음원 파일을 숫자로 하드코딩하여 구현하면 코드 가독성이 떨어집니다.\n아래처럼 전처리문으로 미리 정의해두고 사용하면 가독성이 훨씬 좋아질 것 같습니다 😊\n다른 음원들도 (1~5번 음원) 적용하면 좋을 것 같습니다 ㅎㅎ\n```\n#define BRAILLE_BLOCK_IN_FRONT 2\n..중략..\nmyDFPlayer.play(BRAILLE_BLOCK_IN_FRONT );\n```",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 27
+      },
+      "revId": "e226f77435b36fd755e689b0d1378466e5d3f5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "308132e3_d960a588",
+        "filename": "sample.ino",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1038483
+      },
+      "writtenOn": "2024-11-28T09:19:45Z",
+      "side": 1,
+      "message": "현재 `result`가 점자블록을 감지했는지 조건여부만 가지고 있는 것으로 보이는데요,\n장애물 감지도 함께 하려면 아래처럼 수정한 이후 조건문을 다시 작성해보는게 어떨까 싶습니다 😊\n\n```\nint isBrailleBlock \u003d analyzeBrailleBlock()\nint isObstacle \u003d checkObstacle()\n\nif (isBrailleBlock \u003c\u003d 1 \u0026\u0026 3 \u003c\u003d isBrailleBlock) {\n    // 방향 분석 안내\nelse {\n    if (isObstacle) {\n        // 경고 안내\n    }\n}\n\n```",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 5
+      },
+      "revId": "e226f77435b36fd755e689b0d1378466e5d3f5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7da0a031_281e50f8",
+        "filename": "sample.ino",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1038483
+      },
+      "writtenOn": "2024-11-28T09:19:45Z",
+      "side": 1,
+      "message": "추가로 순서도를 draw.io 를 활용하여 그리면 훨씬 깔끔하게 그릴 수 있을 것 같습니다 ㅎㅎ\nhttps://app.diagrams.net/",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 5
+      },
+      "revId": "e226f77435b36fd755e689b0d1378466e5d3f5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79be7d9c_dd286b8c",
+        "filename": "sample.ino",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1038483
+      },
+      "writtenOn": "2024-11-28T09:19:45Z",
+      "side": 1,
+      "message": "위에서 예시로 보여드린 `int isObstacle \u003d checkObstacle()`로 사용하려면\n여기서 음원을 재생하지 말고 감지 결과 값을 return 해주는 것이 어떨까요? 😊\n```\nif (distance \u003e 0 \u0026\u0026 distance \u003c\u003d 150) {\n    return 1\n}\nreturn 0\n```",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 1
+      },
+      "revId": "e226f77435b36fd755e689b0d1378466e5d3f5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
